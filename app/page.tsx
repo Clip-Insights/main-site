@@ -1,20 +1,29 @@
+import type { Metadata } from "next";
 import Link from "next/link";
-
+import { posts } from "#site/content";
+import { ProductDemo } from "@/components/product-demo";
+import { CallToAction } from "@/components/call-to-action";
+import { Arrow, ChromeIcon, Check } from "@/components/icons";
+import { getPublishedPosts } from "@/lib/content";
+import { STORE_URL } from "@/lib/site";
+export const metadata: Metadata = { alternates: { canonical: "/" } };
+const questions = [
+  ["Do I need an account?", "You can take notes, capture screenshots and download a PDF locally without an account, within guest limits. Sign in to use AI features and upload PDFs to your web library."],
+  ["Where does the extension work?", "Clip Insights currently supports YouTube watch pages in desktop Chrome. It is not a mobile YouTube app. Some videos or browser-restricted pages may not support every feature."],
+  ["Are my notes automatically backed up?", "Notes and screenshots are stored in your browser. Download a PDF to keep a copy, or sign in and upload the PDF to your account. Local notes do not automatically sync to the web app."],
+  ["Does AI work with every video?", "Summaries and chat use the video's available transcript and your plan's usage limits. Missing captions, incomplete transcripts or service availability can affect results. Check important details against the original video."],
+  ["Can I use Clip Insights for free?", "Guest tools work locally, and a free account provides access to account features within its limits. You can view current quotas in the web app. Paid checkout is not currently available."],
+];
 export default function Home() {
-  return (
-    <section className="py-20">
-      <h1 className="max-w-2xl text-5xl font-semibold tracking-tight">
-        Understand video content faster.
-      </h1>
-      <p className="mt-6 max-w-2xl text-xl leading-8 text-zinc-600">
-        Read practical guides and product updates from Clip Insights.
-      </p>
-      <Link
-        className="mt-8 inline-flex rounded-full bg-zinc-950 px-5 py-3 font-medium text-white hover:bg-zinc-700"
-        href="/blog"
-      >
-        Visit the blog
-      </Link>
-    </section>
-  );
+  return <>
+    <section className="hero container"><div className="hero-intro"><div><p className="eyebrow"><span className="status-dot"/> A STUDY COMPANION FOR YOUTUBE</p><h1>Watch with curiosity.<br/>Leave with <span className="highlight-word">clarity.</span></h1></div><div className="hero-detail"><p>Turn YouTube videos into notes you can use. Capture key frames, connect the ideas, and take your learning with you.</p><div className="hero-actions"><a className="button" href={STORE_URL}><ChromeIcon/>Add to Chrome<Arrow/></a><a className="quiet-link" href="#how-it-works">See how it works <span aria-hidden="true">↘</span></a></div><p className="small-note">Local notes & PDF export. No account required to get started.</p></div></div><ProductDemo/></section>
+    <div className="benefit-strip container"><span><Check/>Timestamped notes</span><span><Check/>Video screenshots</span><span><Check/>AI summaries & chat</span><span><Check/>PDF exports</span></div>
+    <section id="how-it-works" className="section container"><div className="section-heading"><p className="eyebrow">FROM WATCHING TO WORKING IT OUT</p><h2>Your thoughts belong<br/>next to the video.</h2><p>Stay with the lesson. Keep what matters without switching between a video, a screenshot folder, and a blank document.</p></div><div className="workflow"><div><span className="step-number">01</span><h3>Open a video.</h3><p>Install the extension and open a YouTube watch page. Your study panel sits beside the lesson.</p></div><div><span className="step-number">02</span><h3>Make it make sense.</h3><p>Capture a frame, add a timestamped explanation, or explore the transcript with AI.</p></div><div><span className="step-number">03</span><h3>Keep the useful parts.</h3><p>Download a PDF of your study material. Sign in to upload the exported file to your web library.</p></div></div><Link href="/guides/getting-started" className="text-link">Your first session, step by step <Arrow/></Link></section>
+    <section className="feature-section"><div className="container feature-row"><div className="feature-copy"><p className="eyebrow">CAPTURE THE MOMENT</p><h2>The diagram.<br/>The explanation.<br/>Your own words.</h2><p>A screenshot keeps the picture. A note keeps what you understood. Timestamps keep the connection to the video.</p><Link href="/features" className="text-link">Explore the study tools <Arrow/></Link></div><div className="capture-scene"><div className="scene-top"><span>YOUR VIDEO NOTES</span><span>04:32</span></div><div className="scene-diagram"><span>an idea</span><div className="idea-connection"/><span className="idea-result">your understanding</span></div><div className="handwritten-note"><span className="timestamp">04:32</span><p>“I understand this better when I can explain <em>why</em> the next step follows.”</p></div><span className="scene-caption">A frame worth keeping. A thought worth writing down.</span></div></div></section>
+    <section className="section container feature-row"><div className="insight-scene"><span className="note-type">A QUESTION WORTH ASKING</span><h3>“What connects these two ideas?”</h3><div className="answer-lines"><i/><i/><i/></div><div className="insight-note"><span aria-hidden="true">↗</span><p>Start with the summary.<br/><strong>Go deeper with your own questions.</strong></p></div></div><div className="feature-copy"><p className="eyebrow">WORK THROUGH THE IDEAS</p><h2>A second look,<br/>from another angle.</h2><p>Get a transcript-based summary and key points, then ask questions about the video. Use the answers as a starting point and check the details in the original lesson.</p><Link href="/guides/ai-and-transcripts" className="text-link">How AI and transcripts work <Arrow/></Link></div></section>
+    <section className="export-section"><div className="container export-inner"><div><p className="eyebrow">SOMETHING TO COME BACK TO</p><h2>Close the tab.<br/>Keep the lesson.</h2><p>Bring your notes and screenshots together in a PDF you can review away from YouTube.</p><a className="button button-outline" href="/sample-notes.pdf" download>Download sample notes <Arrow/></a></div><div className="export-paper"><span>CLIP INSIGHTS</span><h3>Learning by<br/>explaining</h3><div className="paper-rule"/><p><b>02:15</b> Put it in your own words.</p><p><b>04:32</b> Find the missing connection.</p><p><b>07:06</b> Try it without looking.</p><span className="paper-foot">YOUR THOUGHTS. READY TO REVISIT.</span></div></div></section>
+    <section className="section container"><div className="section-heading"><p className="eyebrow">FOR WHATEVER YOU ARE FIGURING OUT</p><h2>A lecture. A tutorial.<br/>A new way to think.</h2></div><div className="use-cases"><article><span className="case-label">AT UNIVERSITY</span><h3>Build a revision trail.</h3><p>Keep the diagram, your explanation and the part you need to ask about in one set of notes.</p></article><article><span className="case-label">LEARNING A SKILL</span><h3>Follow the reasoning.</h3><p>Capture the step that matters in a programming tutorial. Write down why it works before trying it yourself.</p></article><article><span className="case-label">EXPLORING AN IDEA</span><h3>Give curiosity a place.</h3><p>Keep a useful explanation and the question it sparked. Return to it when you want to go further.</p></article></div></section>
+    <section className="section container faq-section"><div><p className="eyebrow">A FEW THINGS TO KNOW</p><h2>Before your<br/>next video.</h2><Link href="/guides" className="text-link">Visit the guides <Arrow/></Link></div><div className="faq-list">{questions.map(([question, answer]) => <details key={question}><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div></section>
+    <section className="section container journal-section"><div className="journal-heading"><div><p className="eyebrow">THE STUDY JOURNAL</p><h2>A better way to learn.</h2></div><Link href="/blog" className="text-link">All articles <Arrow/></Link></div><div className="journal-grid">{getPublishedPosts(posts).slice(0, 3).map((post, index) => <article key={post.slug}><Link href={post.permalink} className={`journal-art art-${index}`} aria-label={`Read ${post.title}`}><span>{["Make it\nyour own.", "Keep the\ncontext.", "Think it\nthrough."][index]}</span><Arrow/></Link><p className="note-type">LEARNING & PRACTICE</p><h3><Link href={post.permalink}>{post.title}</Link></h3><p>{post.excerpt}</p></article>)}</div></section><CallToAction/>
+  </>;
 }

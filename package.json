@@ -3,15 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "engines": { "node": ">=22.16.0" },
+  "overrides": { "velite": { "sharp": "0.35.5" } },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "preview": "next start -p 3001",
     "lint": "eslint",
-    "test": "node --test lib/*.test.*"
+    "test": "node --experimental-strip-types --test --test-concurrency=1 lib/*.test.*"
   },
   "dependencies": {
-    "next": "16.2.10",
+    "next": "16.4.3",
     "react": "19.2.4",
     "react-dom": "19.2.4"
   },
@@ -21,7 +24,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.2.10",
+    "eslint-config-next": "16.4.3",
     "gray-matter": "^4.0.3",
     "slugify": "^1.6.9",
     "tailwindcss": "^4",

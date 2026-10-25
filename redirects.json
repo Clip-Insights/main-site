@@ -23,5 +23,15 @@
     "source": "/2024/12/01/introducing-clip-insights",
     "destination": "/blog/introducing-clip-insights",
     "permanent": true
+  },
+  {
+    "source": "/privacy-policy",
+    "destination": "/privacy",
+    "permanent": true
+  },
+  {
+    "source": "/terms-and-conditions",
+    "destination": "/terms",
+    "permanent": true
   }
 ]

@@ -1,4 +1,4 @@
-import { authors, posts, tags } from "#site/content";
+import { authors, posts, tags, guides, pages } from "#site/content";
 import type { MetadataRoute } from "next";
 
 import { getPublishedPosts, getReferencedSlugs } from "@/lib/content";
@@ -26,6 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.9,
     },
+    ...["/features", "/guides", ...guides.map(({ slug }) => `/guides/${slug}`), ...pages.map(({ slug }) => `/${slug}`)].map((route) => ({ url: `${SITE_URL}${route}`, changeFrequency: "monthly" as const, priority: 0.7 })),
     ...publishedPosts.map((post) => ({
       url: `${SITE_URL}${post.permalink}`,
       lastModified: post.updatedDate ?? post.publishedDate,

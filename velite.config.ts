@@ -69,6 +69,15 @@ const tags = defineCollection({
   }),
 });
 
+const guides = defineCollection({
+  name: 'Guide', pattern: 'guides/**/*.mdx',
+  schema: s.object({ title: s.string().max(160), slug: s.slug('guides'), excerpt: s.string().max(400), order: s.number(), content: s.mdx(), raw: s.raw() }),
+});
+const pages = defineCollection({
+  name: 'Page', pattern: 'pages/**/*.mdx',
+  schema: s.object({ title: s.string().max(160), slug: s.slug('pages'), excerpt: s.string().max(400), content: s.mdx(), raw: s.raw() }),
+});
+
 export default defineConfig({
   root: 'content',
   output: {
@@ -78,7 +87,7 @@ export default defineConfig({
     name: '[name]-[hash:6].[ext]',
     clean: true,
   },
-  collections: { posts, authors, tags },
+  collections: { posts, authors, tags, guides, pages },
   mdx: {
     rehypePlugins: [],
     remarkPlugins: [],

@@ -1,24 +1,16 @@
 import path from "node:path";
-
 import type { NextConfig } from "next";
-
+import { PHASE_DEVELOPMENT_SERVER, PHASE_PRODUCTION_BUILD } from "next/constants";
 import { loadRedirects } from "./lib/redirects";
 
-const isDev = process.env.NODE_ENV === "development";
-const isBuild = process.argv.includes("build");
-const redirectsPath = path.join(process.cwd(), "redirects.json");
-
-if (!process.env.VELITE_STARTED && (isDev || isBuild)) {
-  process.env.VELITE_STARTED = "1";
-  import("velite").then(({ build }) =>
-    build({ watch: isDev, clean: !isDev }),
-  );
+export default async function configure(phase: string): Promise<NextConfig> {
+  if (!process.env.VELITE_STARTED && [PHASE_DEVELOPMENT_SERVER, PHASE_PRODUCTION_BUILD].includes(phase)) {
+    process.env.VELITE_STARTED = "1";
+    const { build } = await import("velite");
+    await build({ watch: phase === PHASE_DEVELOPMENT_SERVER, clean: phase === PHASE_PRODUCTION_BUILD });
+  }
+  return {
+    experimental: { cpus: 2 },
+    async redirects() { return loadRedirects(path.join(process.cwd(), "redirects.json")); },
+  };
 }
-
-const nextConfig: NextConfig = {
-  async redirects() {
-    return loadRedirects(redirectsPath);
-  },
-};
-
-export default nextConfig;

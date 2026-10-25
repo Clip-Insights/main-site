@@ -1,0 +1,40 @@
+---
+title: "When something gets in the way"
+slug: troubleshooting
+excerpt: "Check the panel, sign-in, transcripts, quotas and exports without losing your local notes."
+order: 4
+---
+
+Start by downloading a PDF of any notes you can still access. Avoid clearing browser storage or removing the extension as a first step: those actions can remove local work.
+
+## The panel is missing
+
+Check that you are on a normal YouTube watch page in desktop Chrome. Open Chrome's extension manager, confirm Clip Insights is enabled, and check its site-access permission for YouTube. Reload the video after installing or updating the extension.
+
+If you changed videos without a full page reload, reload once to check whether the problem is related to YouTube's in-page navigation. Test another standard watch page before assuming every video is affected.
+
+## Google sign-in reports an authorization error
+
+An `origin_mismatch` or `redirect_uri_mismatch` message is a configuration problem, not an incorrect password. Use the official extension and [app.clipinsights.org](https://app.clipinsights.org). Send the exact error text to support. Do not send passwords, access tokens or browser-storage exports.
+
+An unpacked developer build can have a different extension ID from the store version. Its Google sign-in redirect must match that ID; installing a developer build is not a general fix for a store sign-in problem.
+
+## A summary or chat answer will not load
+
+Check whether the video has usable captions, whether you are signed in, and whether you have reached an account limit. Try one short video with captions. If both the web app and account-based actions fail, the backend may be unavailable.
+
+A retry can help after a transient connection problem. Repeated requests cannot resolve unavailable billing, a missing transcript or an exhausted quota. Your local notes and downloads are separate from remote AI processing.
+
+## My notes are missing
+
+Check the browser profile and the original video first. Local timelines are associated with their video and browser storage. A different profile, another computer, cleared data or a removed extension may not contain the same notes.
+
+Look for downloaded PDFs and uploaded files in your web account. An uploaded PDF is a useful backup, but it does not restore an editable local timeline automatically.
+
+## Download or upload failed
+
+For a failed download, retry once and check Chrome's download permissions and available device storage. Capture an unobscured frame again if an image looks wrong. For a failed upload, check sign-in, network access, per-file size and remaining cloud storage. Download locally so your work is safe while you resolve the upload.
+
+## Send a useful report
+
+Contact [zubayrahmad0308@gmail.com](mailto:zubayrahmad0308@gmail.com) with your Chrome version, extension version, the action you attempted and the visible error. Include a public video link if appropriate. A screenshot can help, but hide account details and private notes first. We do not need your password or card information.

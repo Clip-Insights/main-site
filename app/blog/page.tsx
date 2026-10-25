@@ -39,10 +39,11 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
 
   return (
     <>
-      <header className="mb-12">
-        <h1 className="text-4xl font-semibold tracking-tight">Blog</h1>
-        <p className="mt-4 max-w-2xl text-lg leading-8 text-zinc-600">
-          Guides and product updates from Clip Insights.
+      <header className="page-heading">
+        <p className="eyebrow">THE STUDY JOURNAL</p>
+        <h1>A better way to learn<br/>from what you watch.</h1>
+        <p>
+          Practical workflows, thoughtful notes, and a closer look at the tools. Something useful for your next session.
         </p>
       </header>
       <PostList posts={pagination.items} />

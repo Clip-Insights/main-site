@@ -1,0 +1,2 @@
+import Link from "next/link";
+export default function NotFound() { return <div className="content-page"><div className="page-heading"><p className="eyebrow">404 / THIS PAGE IS MISSING</p><h1>Let’s get back<br/>to the useful part.</h1><p>The link may have changed, or this page does not exist. The guides are a good place to start.</p></div><div className="hero-actions"><Link className="button" href="/">Back to home</Link><Link className="text-link" href="/guides">Browse the guides →</Link></div></div>; }
