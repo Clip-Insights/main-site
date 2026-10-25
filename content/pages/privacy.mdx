@@ -4,7 +4,7 @@ slug: privacy
 excerpt: "How the Clip Insights website, extension and account services handle your information."
 ---
 
-Effective 25 October 2026. This policy covers clipinsights.org, app.clipinsights.org and the Clip Insights Chrome extension. Privacy requests can be sent to [zubayrahmad0308@gmail.com](mailto:zubayrahmad0308@gmail.com), the public contact for the project maintainer.
+Effective 25 October 2026. This policy covers clipinsights.org, app.clipinsights.org and the Clip Insights Chrome extension. Privacy requests can be sent to [zubayrahmad0308@gmail.com](mailto:zubayrahmad0308@gmail.com), the public contact address for Clip Insights.
 
 ## Browsing this public website
 
@@ -20,39 +20,39 @@ Local notes are not automatically synchronized to an account. Downloading a PDF 
 
 ## Account and authentication information
 
-When you register or sign in, the service processes the account information needed to identify and authenticate you, including your email and, where supplied, your name. Email/password authentication processes your password; the backend stores a password hash rather than a readable password. Optional Google sign-in uses Google identity information, including an ID token, to authenticate you. The extension requests identity scopes for openid, email and profile.
+When you register or sign in, the service processes the account information needed to identify and authenticate you, including your email and, where supplied, your name. Email/password authentication processes your password; passwords are stored as hashes rather than readable text. Optional Google sign-in uses Google identity information, including an ID token, to authenticate you. The extension requests identity scopes for openid, email and profile.
 
 Session tokens are stored in the client so requests can be associated with your account. Keep access to your browser profile secure. We do not request access to your Gmail mailbox as part of Google sign-in.
 
 ## AI, transcript and conversation processing
 
-When you request a summary, key points or a chat answer, relevant transcript text, video information, your question and relevant conversation context are transmitted to the backend. AI and embedding services process that material to provide the requested response. Transcript passages or representations of them can be retained in backend storage to support retrieval for video questions. Account usage records are used to enforce quotas.
+When you request a summary, key points or a chat answer, relevant transcript text, video information, your question and relevant conversation context are sent to our services. AI and embedding services process that material to provide the requested response. Transcript passages or representations of them can be retained in service storage to support retrieval for video questions. Account usage records are used to enforce quotas.
 
-The backend's supported processing services include Fireworks AI for language-model and embedding requests, Google Gemini as an alternative language-model/embedding provider, Groq for server-side transcription where used, and CockroachDB for application and transcript-retrieval data. The provider used for a request depends on enabled backend configuration. Do not include sensitive or confidential material in AI prompts. AI providers process submitted data under their own terms and privacy policies; we do not make a blanket promise about their training or retention practices.
+Services used for AI and data processing can include Fireworks AI for language-model and embedding requests, Google Gemini as an alternative language-model/embedding provider, Groq for server-side transcription where used, and CockroachDB for application and transcript-retrieval data. The service used depends on the feature you request. Do not include sensitive or confidential material in AI prompts. AI providers process submitted data under their own terms and privacy policies; their own policies govern how they retain and use that information.
 
 ## Uploaded files and infrastructure
 
-Selecting Upload sends the generated PDF and associated file information to the backend. Uploaded files use Amazon S3 storage; account and file metadata are held in the application database. The API runs on Google Cloud Run. These providers process data needed to store and deliver the service, which may involve processing outside your country.
+Selecting Upload sends the generated PDF and associated file information to our services. Uploaded files use Amazon S3 storage; account and file metadata are held in the application database. The API runs on Google Cloud Run. These providers process data needed to store and deliver the service, which may involve processing outside your country.
 
-Google handles optional identity authentication. Account messages, such as verification and password reset emails, are delivered using the configured email service; the backend supports SMTP and Resend. Service logs can contain technical request, account, file or error information used to diagnose problems and operate the system. We do not claim that uploaded documents are end-to-end encrypted or inaccessible to service operators.
+Google handles optional identity authentication. Account messages, such as verification and password reset emails, are delivered using the configured email service; supported delivery methods include SMTP and Resend. Service logs can contain technical request, account, file or error information used to diagnose problems and operate the system. Uploaded documents are accessible to the services and authorized operators needed to store, deliver and maintain them.
 
 ## Purpose and sharing
 
 Information is used to provide the requested study tools, authenticate users, save files, enforce limits, answer support requests and maintain service reliability. We do not sell personal information or use the extension's data for advertising or creditworthiness decisions. Information may be disclosed when needed to comply with applicable legal obligations or address abuse. We do not collect unrelated browsing history through the extension as a separate user-facing feature.
 
-The extension and public site do not collect payment-card details. Paid checkout is currently unavailable. If paid processing is introduced, the relevant disclosures will need to describe the actual payment service before it is used.
+The extension and public site do not collect payment-card details.
 
 ## Retention and your choices
 
 Local data stays in your browser until it is removed by you, the extension or browser storage management. Downloaded PDFs remain wherever you save them. Removing a local note does not delete a previously exported or uploaded PDF.
 
-Account information, uploaded files, usage records and transcript-related backend data may persist beyond a browser session. This policy does not promise that every copy is removed immediately or after a fixed number of days. Technical logs, backups, legal obligations and third-party provider retention can affect removal. Contact us for an account-specific access, correction or deletion request and confirmation of its scope. Verification of account control may be required.
+Account information, uploaded files, usage records and transcript-related data may persist beyond a browser session. Retention and removal depend on the type of information, technical logs and backups, legal obligations and third-party provider policies. Contact us for an account-specific access, correction or deletion request and confirmation of its scope. Verification of account control may be required.
 
-You can delete uploaded files through the app's file-management tools where available, manage local storage in Chrome, revoke Google access through your Google account settings, or uninstall the extension. Download anything you want to retain first. Revoking Google access or uninstalling does not itself request deletion of your backend account.
+You can delete uploaded files through the app's file-management tools where available, manage local storage in Chrome, revoke Google access through your Google account settings, or uninstall the extension. Download anything you want to retain first. Revoking Google access or uninstalling does not itself request deletion of your Clip Insights account.
 
 ## Children and sensitive information
 
-Clip Insights is a general study tool, not a service designed to collect information from young children. Do not submit information you are not authorized to share, confidential course content, or sensitive personal information. If you believe a child has supplied personal data that should be removed, contact the maintainer.
+Clip Insights is a general study tool, not a service designed to collect information from young children. Do not submit information you are not authorized to share, confidential course content, or sensitive personal information. If you believe a child has supplied personal data that should be removed, contact us.
 
 ## Changes and questions
 

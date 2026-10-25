@@ -47,3 +47,10 @@ The site is prepared locally; it has not been committed, pushed or deployed. Dom
 Backend billing restoration is outside this website change. No live authenticated AI request or account PDF upload was certified during this pass. Public pages, blog, guides, contact and the sample download do not depend on Cloud Run availability.
 
 No real-user Core Web Vitals or search-ranking result is claimed. Privacy text reflects the inspected code's supported processing paths; changes to actual enabled providers, analytics, payment handling or retention must be reflected in disclosures.
+
+
+## End-user copy revision — 25 October 2026
+
+Removed migration, authorization-error and billing commentary from the public product copy. Reworked the help guide into study-session questions, simplified Plans and Contact, and reduced sample-download promotion to the walkthrough and relevant PDF articles. Preserved accurate storage and privacy information.
+
+Validation: ESLint and diff whitespace checks passed. A Webpack production build (`node node_modules/next/dist/bin/next build --webpack`) passed with TypeScript and all 36 generated routes. The default Turbopack builder hit a local CSS worker startup failure on the final rebuild; no bundler configuration was changed. The production preview passed all 36 local URL checks and seven legacy redirects. Home, Features, study-session help, Plans and Contact returned 200 with no horizontal overflow at 390px and 1440px, and none contained the removed internal setup messages.
