@@ -4,7 +4,7 @@
  * velite.config.ts (content/posts, content/authors, content/tags).
  *
  * Usage:
- *   WP_BASE_URL=https://clipinsights.com node scripts/migrate-wp-to-mdx.mjs
+ *   WP_BASE_URL=https://clipinsights.org node scripts/migrate-wp-to-mdx.mjs
  *
  * Requires (package.json devDependencies):
  *   npm i -D turndown turndown-plugin-gfm slugify gray-matter
@@ -33,7 +33,7 @@ import { omitUndefined } from '../lib/frontmatter.mjs';
 import { getRedirectSourcePath } from '../lib/wp-redirects.mjs';
 
 const PROJECT_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const WP_BASE_URL = process.env.WP_BASE_URL || 'https://clipinsights.com';
+const WP_BASE_URL = process.env.WP_BASE_URL || 'https://clipinsights.org';
 const OUT_DIR = process.env.OUT_DIR || path.join(PROJECT_ROOT, 'content');
 const IMAGES_DIR = process.env.IMAGES_DIR || path.join(PROJECT_ROOT, 'public/images/posts');
 const PER_PAGE = 100;

@@ -69,7 +69,7 @@ Expected: all content helper tests pass.
 
 - [ ] **Step 1: Add site constants**
 
-Export `SITE_NAME`, `SITE_DESCRIPTION`, and `SITE_URL` using `https://clipinsights.com`.
+Export `SITE_NAME`, `SITE_DESCRIPTION`, and `SITE_URL` using `https://clipinsights.org`.
 
 - [ ] **Step 2: Add the Velite MDX renderer**
 
@@ -127,7 +127,7 @@ Return home, blog, every published post, and unique referenced author/tag URLs. 
 
 - [ ] **Step 2: Generate robots output**
 
-Allow all crawlers and link to `https://clipinsights.com/sitemap.xml`.
+Allow all crawlers and link to `https://clipinsights.org/sitemap.xml`.
 
 - [ ] **Step 3: Run full verification**
 

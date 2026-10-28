@@ -21,7 +21,7 @@ Implement Phase 2 only: public blog, post, author, and tag routes backed by Veli
 
 ## Metadata
 
-- Set the site metadata base to `https://clipinsights.com`.
+- Set the site metadata base to `https://clipinsights.org`.
 - Blog, author, and tag routes receive descriptive route-specific metadata and canonical URLs.
 - Post metadata uses `seoTitle`, `seoDescription`, and `canonicalUrl` when supplied, falling back to `title`, `excerpt`, and the generated post permalink.
 
