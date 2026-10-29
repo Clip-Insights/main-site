@@ -1,60 +1,42 @@
 # Clip Insights · Public website
 
-The public website for [Clip Insights](https://clipinsights.org): a place to discover the video study tools, read product guides, and explore articles about learning from video.
+### Discover a better way to learn from video.
 
-[Website](https://clipinsights.org) · [Web app](https://app.clipinsights.org) · [Project overview](https://github.com/Clip-Insights) · [System architecture](https://github.com/Clip-Insights/.github/blob/main/docs/ARCHITECTURE.md)
+The public home of Clip Insights: product information, practical guides, and articles about turning learning videos into useful study notes.
+
+[Visit website](https://clipinsights.org) · [Open web app](https://app.clipinsights.org) · [Install extension](https://chromewebstore.google.com/detail/ccgechmifoecebnimnccgahnoklklilj)
+
+## What visitors find
+
+| Discover | Learn | Try |
+| --- | --- | --- |
+| The product, its study tools, and account options. | Guides and articles about learning from video. | An illustrative walkthrough and a sample study-notes PDF. |
+
+## How the site works
+
+![Content and assets flowing through Velite into the public website](./docs/diagrams/public-site-architecture.svg)
+
+Written content becomes typed collections through Velite, then Next.js renders the public pages. The website runs independently of account and AI services and directs visitors to the extension and web dashboard.
 
 ## Built with
 
-Next.js App Router, TypeScript, and Velite for typed content. Product pages, guides, and articles are rendered from the application and its content files. Fonts are self-hosted; the Inter license is included.
+**Next.js App Router · React 19 · TypeScript · Velite · Tailwind CSS**
+
+The site includes product pages, guides, articles, and contact and policy information. Fonts are self-hosted, and the sample PDF is generated with the extension's document renderer.
 
 ## Run locally
 
-Use Node.js 22.16 or later and npm.
+Use Node.js 22.16 or later. No backend credentials or database are required.
 
 ```bash
-git clone https://github.com/Clip-Insights/main-site.git
-cd main-site
 npm ci
 npm run dev
 ```
 
-The public site requires no backend environment variables, database, or API keys. Account and AI features are accessed through the separate web app and extension.
+Run `npm test`, `npm run lint`, and `npm run build` for verification.
 
-## Content and code
+## Explore further
 
-| Location | Purpose |
-| --- | --- |
-| `app/page.tsx` | Product homepage. |
-| `components/product-demo.tsx` | Illustrative interactive product walkthrough. |
-| `content/posts` | Articles about video learning and study workflows. |
-| `content/guides` | Product guides. |
-| `content/pages` | About, contact, plans, privacy, and terms. |
-| `public/sample-notes.pdf` | Sample study notes generated with the extension's PDF renderer. |
-| `lib/site.ts` | Website, app, store, and contact configuration. |
-| `redirects.json` | Route redirects and policy aliases. |
+[Detailed architecture](./ARCHITECTURE.md) · [Development guide](./docs/DEVELOPMENT.md) · [Hosting configuration](./DEPLOYMENT.md)
 
-Velite builds typed content during `next dev` and `next build`.
-
-## Verify
-
-```bash
-npm test
-npm run lint
-npm run build
-npm run preview
-```
-
-With the preview running, check internal links in another terminal:
-
-```bash
-node scripts/check-links.mjs http://localhost:3001
-```
-
-Deployment configuration is described in [DEPLOYMENT.md](./DEPLOYMENT.md). Content import utilities under `scripts/` are maintenance tools and are not part of the normal build or deployment process.
-
-## Related repositories
-
-- [chrome-extension](https://github.com/Clip-Insights/chrome-extension): the video study workspace.
-- [web-app](https://github.com/Clip-Insights/web-app): accounts and saved document management.
-- [backend](https://github.com/Clip-Insights/backend): the shared API and AI services.
+Part of [Clip Insights](https://github.com/Clip-Insights): [Chrome extension](https://github.com/Clip-Insights/chrome-extension) · [web app](https://github.com/Clip-Insights/web-app) · [backend](https://github.com/Clip-Insights/backend).
