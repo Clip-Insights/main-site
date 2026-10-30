@@ -1,18 +1,62 @@
 "use client";
+
+import Image from "next/image";
 import { useState } from "react";
-import { Arrow, CaptureIcon } from "./icons";
-import { BrandMark } from "./brand-mark";
-const views = ["Notes", "Insights", "PDF"] as const;
-type View = (typeof views)[number];
+import { Arrow } from "./icons";
+import { PdfPages } from "./product-visuals";
+import styles from "./product-demo.module.css";
+
+const stages = [
+  {
+    label: "Capture", title: "Keep the moment that matters.",
+    description: "Save a useful frame and put the explanation in your own words. Each note keeps its place in the video.",
+    image: "extension.png", alt: "Current extension with a captured frame and timestamped note",
+    detail: "Screenshots + timestamped notes",
+  },
+  {
+    label: "Understand", title: "Give the ideas a second look.",
+    description: "Start with a summary and key points from the available transcript. Ask a follow-up question when something needs more explanation.",
+    image: "summary.png", alt: "Current summary view explaining gradient descent and learning rate",
+    detail: "AI requires sign-in and an available transcript.",
+  },
+  {
+    label: "Keep", title: "Take the useful parts with you.",
+    description: "Bring your screenshots, notes, and generated insights together as a PDF you can open whenever you need it.",
+    image: null, alt: "", detail: "Actual PDF output from this sample session",
+  },
+] as const;
+
 export function ProductDemo() {
-  const [view, setView] = useState<View>("Notes");
-  return <figure className="product-demo" aria-label="Interactive product walkthrough using an illustrative lesson">
-    <div className="browser-bar"><span className="browser-dots" aria-hidden="true"><i/><i/><i/></span><span>One video. Everything you want to keep.</span><span className="demo-label">Interactive example</span></div>
-    <div className="demo-workspace"><div className="lesson-side"><div className="lesson-screen"><div className="lesson-caption">THE LEARNING LAB <span>LESSON 04</span></div><h3>Small steps.<br/>Lasting knowledge.</h3><div className="learning-diagram" aria-label="Learning cycle: watch, explain, practice"><span>Watch</span><b aria-hidden="true">→</b><span className="diagram-focus">Explain</span><b aria-hidden="true">→</b><span>Practice</span></div><div className="lesson-bottom"><span>Make the idea your own.</span><span aria-hidden="true">↗</span></div><div className="playback"><span aria-hidden="true">Ⅱ</span><span>04:32 <span className="playback-muted">/ 12:48</span></span><div className="progress-track"><i/></div><span aria-hidden="true">⛶</span></div></div><h3 className="video-title">Learning by explaining: a practical study method</h3><p className="video-caption">A study session, at a glance</p><div className="capture-callout"><CaptureIcon/><span>Keep the moment.<br/><strong>Keep your explanation, too.</strong></span></div></div>
-    <div className="notes-panel"><div className="panel-brand"><span className="wordmark"><BrandMark/></span><span className="local-badge">Your study space</span></div><div className="demo-tabs" role="tablist" aria-label="Explore the example">{views.map((label, index) => <button key={label} role="tab" id={`demo-tab-${label}`} aria-selected={view === label} aria-controls={`demo-panel-${label}`} tabIndex={view === label ? 0 : -1} onClick={() => setView(label)} onKeyDown={(event) => { const offset = event.key === "ArrowRight" ? 1 : event.key === "ArrowLeft" ? -1 : 0; if (offset) { event.preventDefault(); const next = views[(index + offset + views.length) % views.length]; setView(next); document.getElementById(`demo-tab-${next}`)?.focus(); } }}>{label}</button>)}</div>
-    {views.map((panel) => <div key={panel} hidden={view !== panel} className="demo-tab-panel" role="tabpanel" id={`demo-panel-${panel}`} aria-labelledby={`demo-tab-${panel}`} tabIndex={0}>
-      {panel === "Notes" && <><div className="note-entry"><span className="timestamp">02:15</span><div><span className="note-type">NOTE</span><p>After watching, close the video and explain the idea in my own words.</p></div></div><div className="note-entry"><span className="timestamp">04:32</span><div><span className="note-type">SCREENSHOT + NOTE</span><div className="note-screenshot">Watch <span>→</span> <b>Explain</b> <span>→</span> Practice</div><p>If I get stuck explaining a step, that is the part to revisit.</p></div></div><div className="note-entry"><span className="timestamp">07:06</span><div><span className="note-type">QUESTION TO REVISIT</span><p>Can I apply this to the tutorial I watched yesterday?</p></div></div></>}
-      {panel === "Insights" && <div className="insight-example"><span className="note-type">EXAMPLE SUMMARY</span><h4>From watching to understanding.</h4><p>This lesson follows a simple cycle: watch a short section, explain it without looking, and practise it independently.</p><div className="example-question">What should I do when I cannot explain a step?</div><p>Return to that section, identify the missing connection, and try explaining it again.</p><small>Example insights from the lesson.</small></div>}
-      {panel === "PDF" && <div className="pdf-example"><span className="note-type">TAKE IT WITH YOU</span><div className="paper-preview"><span>CLIP INSIGHTS / STUDY NOTES</span><h4>Learning by explaining</h4><hr/><p><b>02:15</b> Explain the idea in your own words.</p><p><b>04:32</b> Watch → Explain → Practice</p><p><b>07:06</b> Try the method independently.</p></div><a href="/sample-notes.pdf" className="text-link" download>Download the example PDF <Arrow/></a><small>See how your finished notes come together.</small></div>}
-    </div>)}<div className="panel-footer"><span>Capture. Understand. Keep.</span><CaptureIcon/></div></div></div><figcaption>Explore an example study session: capture a thought, find an insight, and take your notes with you.</figcaption></figure>;
+  const [selected, setSelected] = useState(0);
+  return <div className={styles.demo}>
+    <div className={styles.tabs} role="tablist" aria-label="Explore a study session">
+      {stages.map((stage, index) => <button key={stage.label} id={`study-tab-${index}`} role="tab" type="button"
+        aria-selected={selected === index} aria-controls={`study-panel-${index}`} tabIndex={selected === index ? 0 : -1}
+        onClick={() => setSelected(index)} onKeyDown={(event) => {
+          const next = event.key === "Home" ? 0 : event.key === "End" ? stages.length - 1
+            : event.key === "ArrowRight" ? (index + 1) % stages.length
+            : event.key === "ArrowLeft" ? (index + stages.length - 1) % stages.length : null;
+          if (next !== null) {
+            event.preventDefault();
+            setSelected(next);
+            document.getElementById(`study-tab-${next}`)?.focus();
+          }
+        }}><span>0{index + 1}</span>{stage.label}<Arrow/></button>)}
+    </div>
+    {stages.map((stage, index) => <div key={stage.label} className={styles.panel} hidden={selected !== index}
+      id={`study-panel-${index}`} role="tabpanel" aria-labelledby={`study-tab-${index}`} tabIndex={0}>
+      <div className={styles.copy}>
+        <p className={styles.kicker}>ONE LESSON. SOMETHING TO BUILD ON.</p>
+        <h3>{stage.title}</h3><p>{stage.description}</p>
+        {index === 2
+          ? <a className="text-link" href="/sample-notes.pdf" download>Download the sample PDF <Arrow/></a>
+          : <a className="text-link" href={index === 0 ? "/guides/notes-and-pdf-export" : "/guides/ai-and-transcripts"}>Explore the guide <Arrow/></a>}
+        <small>{stage.detail}</small>
+      </div>
+      <div className={styles.visual}>{stage.image
+        ? <Image src={`/product/${stage.image}`} width={720} height={900} sizes="(max-width: 600px) 80vw, 330px" alt={stage.alt}/>
+        : <PdfPages/>}</div>
+    </div>)}
+    <p className={styles.caption}>Explore the current interface with an example lesson. Sample notes and AI responses are illustrative.</p>
+  </div>;
 }

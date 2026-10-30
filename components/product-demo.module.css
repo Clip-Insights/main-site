@@ -1,0 +1,133 @@
+.demo {
+  margin-top: 40px;
+}
+.tabs {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 24px;
+  border-bottom: 1px solid var(--line);
+}
+.tabs button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 60px;
+  padding: 16px 0;
+  background: none;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  color: var(--body);
+  text-align: left;
+  font-size: 15px;
+  font-weight: 600;
+}
+.tabs button>span {
+  font-size: 10px;
+  font-weight: 400;
+}
+.tabs button svg {
+  width: 18px;
+  height: 18px;
+  margin-left: auto;
+}
+.tabs button[aria-selected=true] {
+  color: var(--accent-strong);
+  border-bottom-color: var(--accent);
+}
+.tabs button:hover {
+  color: var(--accent-strong);
+}
+.panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 80px;
+  min-height: 580px;
+  padding: 48px;
+  background: #eeefea;
+  border-radius: 0 0 12px 12px;
+}
+.panel[hidden] {
+  display: none;
+}
+.copy {
+  max-width: 380px;
+}
+.kicker {
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: var(--body);
+}
+.copy h3 {
+  font-size: 40px;
+  line-height: 1.12;
+  margin-top: 22px;
+}
+.copy>p:not(.kicker) {
+  margin-block: 24px;
+  color: var(--body);
+  font-size: 15px;
+  line-height: 1.9;
+}
+.copy small {
+  display: block;
+  font-size: 10px;
+  color: var(--body);
+  margin-top: 24px;
+}
+.visual {
+  min-width: 0;
+}
+.visual>img {
+  display: block;
+  width: min(330px,100%);
+  height: auto;
+  border: 1px solid #d8dce7;
+  border-radius: 8px;
+  margin-inline: auto;
+  box-shadow: 0 16px 32px #2023310d;
+}
+.caption {
+  font-size: 10px;
+  color: var(--body);
+  padding-top: 16px;
+}
+@media(max-width:850px) {
+  .panel {
+    gap: 40px;
+    padding: 32px;
+  }
+  .copy h3 {
+    font-size: 32px;
+  }
+}
+@media(max-width:600px) {
+  .tabs {
+    gap: 16px;
+  }
+  .tabs button {
+    gap: 7px;
+    font-size: 13px;
+  }
+  .tabs button svg {
+    display: none;
+  }
+  .panel {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 28px 20px;
+  }
+  .copy h3 {
+    font-size: 34px;
+  }
+  .copy>p:not(.kicker) {
+    font-size: 14px;
+    margin-block: 20px;
+  }
+  .copy small {
+    margin-top: 16px;
+  }
+  .caption {
+    font-size: 9px;
+  }
+}

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="405" viewBox="0 0 720 405">
+<rect width="720" height="405" fill="#171b2c"/>
+<g font-family="Arial,sans-serif">
+<text x="38" y="40" fill="#a9b2d0" font-size="11" letter-spacing="2.4">MACHINE LEARNING / 04</text>
+<text x="38" y="104" fill="#f9faff" font-size="35" font-weight="700">Gradient</text><text x="38" y="147" fill="#f9faff" font-size="35" font-weight="700">descent.</text>
+<text x="40" y="188" fill="#b5bed8" font-size="15">Small steps.</text><text x="40" y="211" fill="#b5bed8" font-size="15">Better predictions.</text>
+<path d="M345 78 V310 H670" fill="none" stroke="#434b65" stroke-width="1.5"/>
+<path d="M345 135 H670 M345 193 H670 M345 251 H670" stroke="#2a3148" fill="none"/>
+<path d="M364 100 C408 173 442 282 514 285 C581 285 618 195 651 128" fill="none" stroke="#8190ff" stroke-width="4"/>
+<path d="M380 129 L407 179 L432 225 L460 263 L490 282 L514 285" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="4 5"/>
+<g fill="#f9faff" stroke="#171b2c" stroke-width="3"><circle cx="380" cy="129" r="6"/><circle cx="407" cy="179" r="6"/><circle cx="432" cy="225" r="6"/><circle cx="460" cy="263" r="6"/><circle cx="490" cy="282" r="6"/></g>
+<circle cx="514" cy="285" r="9" fill="#8190ff" stroke="#171b2c" stroke-width="3"/>
+<text x="355" y="65" fill="#a9b2d0" font-size="12">Loss</text><text x="462" y="338" fill="#a9b2d0" font-size="12">Model parameter</text>
+<rect x="38" y="264" width="258" height="48" rx="6" fill="#252b43"/><text x="54" y="294" fill="#dce1ff" font-size="16">w(next) = w − η ∇L(w)</text>
+<path d="M38 363 H682" stroke="#343c54"/><text x="38" y="385" fill="#8e98b5" font-size="10" letter-spacing="1.1">UNDERSTAND THE IDEA. THEN BUILD ON IT.</text><text x="659" y="385" fill="#8e98b5" font-size="10">04</text>
+</g></svg>

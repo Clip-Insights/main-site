@@ -1,0 +1,284 @@
+.studyScene {
+  position: relative;
+  height: 610px;
+  min-width: 0;
+}
+.sceneField {
+  position: absolute;
+  inset: 0 0 38px 24%;
+  background: var(--soft);
+  border-radius: 12px;
+}
+.player {
+  position: absolute;
+  left: 0;
+  top: 162px;
+  width: 71%;
+  border: 1px solid #d6d9e2;
+  border-radius: 10px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 16px 40px #2023310d;
+}
+.playerHeading {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 16px;
+  color: #4c5060;
+  font-size: 10px;
+  font-weight: 600;
+}
+.playerHeading>span:first-child {
+  color: #c42a2a;
+}
+.playerHeading>span:last-child {
+  margin-left: auto;
+  letter-spacing: 2px;
+}
+.player>img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.playback {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  font-size: 9px;
+  color: var(--body);
+}
+.progress {
+  height: 3px;
+  flex: 1;
+  background: #e4e6ee;
+}
+.progress i {
+  display: block;
+  width: 27%;
+  height: 3px;
+  background: var(--accent);
+}
+.extension {
+  position: absolute;
+  right: 24px;
+  top: 42px;
+  width: 57%;
+  height: auto;
+  border: 1px solid #d8dce7;
+  border-radius: 8px;
+  box-shadow: 0 20px 48px #2023311a;
+}
+.studyScene figcaption {
+  position: absolute;
+  left: 0;
+  bottom: 16px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.studyScene figcaption:before {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 2px;
+  background: var(--accent);
+  margin-bottom: 12px;
+}
+.studyScene small {
+  display: block;
+  margin-top: 4px;
+  color: var(--body);
+  font-size: 10px;
+  font-weight: 400;
+}
+.captureVisual {
+  padding: 32px;
+  background: var(--soft);
+  border-radius: 12px;
+}
+.savedFrame {
+  padding: 16px;
+  border: 1px solid #d9ddea;
+  border-radius: 8px;
+  background: white;
+}
+.savedFrame>img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+.frameLabel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--body);
+}
+.frameLabel>span:last-child {
+  padding: 3px 7px;
+  color: var(--accent-strong);
+  background: var(--soft);
+  border-radius: 4px;
+  font-size: 10px;
+  letter-spacing: 0;
+}
+.noteDetail {
+  position: relative;
+  padding: 16px;
+  margin: -24px -12px 0 28px;
+  background: white;
+  border: 1px solid #d9ddea;
+  border-radius: 8px;
+  box-shadow: 0 12px 24px #2023310a;
+}
+.noteDetail>span {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--body);
+}
+.noteDetail>img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.captureVisual figcaption {
+  max-width: 320px;
+  margin-top: 24px;
+  color: var(--body);
+  font-size: 10px;
+}
+.pdfPages {
+  position: relative;
+  aspect-ratio: 1 / 1.14;
+}
+.pdfPages img {
+  position: absolute;
+  height: auto;
+  box-shadow: 0 16px 40px #20233118;
+  border: 1px solid #dfe1e8;
+}
+.firstPage {
+  left: 0;
+  top: 0;
+  width: 60%;
+}
+.secondPage {
+  right: 0;
+  width: 55%;
+  top: 22%;
+}
+@media(min-width:1500px) {
+  .studyScene {
+    height: 650px;
+  }
+  .extension {
+    top: 54px;
+  }
+  .player {
+    top: 184px;
+  }
+}
+@media(max-width:1100px) {
+  .studyScene {
+    height: 530px;
+  }
+  .sceneField {
+    bottom: 56px;
+  }
+  .extension {
+    right: 16px;
+    top: 62px;
+    width: 62%;
+  }
+  .player {
+    top: 184px;
+    width: 78%;
+  }
+  .captureVisual {
+    padding: 24px;
+  }
+}
+@media(max-width:760px) {
+  .studyScene {
+    height: 480px;
+    margin-top: 32px;
+  }
+  .sceneField {
+    left: 18%;
+    bottom: 64px;
+  }
+  .extension {
+    width: 73%;
+    right: 12px;
+    top: 24px;
+  }
+  .player {
+    width: 74%;
+    top: 146px;
+  }
+  .playerHeading {
+    padding: 8px;
+    font-size: 7px;
+  }
+  .playback {
+    padding: 9px;
+    gap: 8px;
+    font-size: 7px;
+  }
+  .studyScene figcaption {
+    bottom: 4px;
+    font-size: 12px;
+  }
+  .studyScene small {
+    font-size: 9px;
+  }
+  .studyScene figcaption:before {
+    margin-bottom: 8px;
+  }
+  .captureVisual {
+    padding: 20px;
+  }
+  .noteDetail {
+    padding: 12px;
+    margin: -16px -8px 0 12px;
+  }
+  .savedFrame {
+    padding: 12px;
+  }
+  .frameLabel {
+    font-size: 7px;
+    letter-spacing: .6px;
+  }
+  .captureVisual figcaption {
+    font-size: 9px;
+  }
+  .pdfPages {
+    max-width: 530px;
+    width: 100%;
+    margin-inline: auto;
+  }
+}
+@media(min-width:601px) and (max-width:760px) {
+  .studyScene {
+    width: 520px;
+    max-width: 100%;
+    margin-inline: auto;
+    height: 580px;
+  }
+}
+@media(max-width:600px) {
+}
+@media(max-width:370px) {
+  .studyScene {
+    height: 440px;
+  }
+}

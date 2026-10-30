@@ -5,7 +5,7 @@ import { useState } from "react";
 import { APP_URL, STORE_URL } from "@/lib/site";
 import { Arrow } from "./icons";
 import { BrandMark } from "./brand-mark";
-const links = [{ href: "/#how-it-works", label: "How it works" }, { href: "/features", label: "Features" }, { href: "/guides", label: "Guides" }, { href: "/blog", label: "Blog" }];
+const links = [{ href: "/features", label: "Product" }, { href: "/#how-it-works", label: "How it works" }, { href: "/guides", label: "Guides" }];
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();

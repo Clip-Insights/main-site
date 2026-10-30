@@ -6,8 +6,8 @@
   "engines": { "node": ">=22.16.0" },
   "overrides": { "velite": { "sharp": "0.35.5" } },
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
     "start": "next start",
     "preview": "next start -p 3001",
     "lint": "eslint",
