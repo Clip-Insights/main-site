@@ -8,5 +8,6 @@ export function ContactDetails() {
     <h2>Talk to the team.</h2>
     <p>A product question, a problem, or an idea for what comes next. We’d like to hear from you.</p>
     <a className={`button ${styles.emailButton}`} href={`mailto:${CONTACT_EMAIL}?subject=Hello%20Clip%20Insights`}>Email the team <Arrow/></a>
+    <span className={styles.emailAddress}>{CONTACT_EMAIL}</span>
   </div>;
 }

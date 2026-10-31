@@ -26,8 +26,9 @@ export function CaptureVisual() {
 }
 
 export function PdfPages() {
-  return <div className={styles.pdfPages}>
-    <Image className={styles.firstPage} src="/product/sample-export.png" width={1191} height={1684} sizes="(max-width: 600px) 55vw, 330px" alt="Actual exported study PDF: summary and key points about gradient descent"/>
-    <Image className={styles.secondPage} src="/product/sample-export-page-2.png" width={1191} height={1684} sizes="(max-width: 600px) 50vw, 300px" alt="Second PDF page containing the captured diagram and timestamped note"/>
-  </div>;
+  return <figure className={styles.pdfViewer}>
+    <div className={styles.pdfToolbar}><span>Gradient descent · study notes.pdf</span><span>1 / 3</span></div>
+    <div className={styles.pdfPaper}><Image src="/product/study-export.png" width={990} height={1400} sizes="(max-width: 600px) 75vw, 420px" alt="First page of the exported PDF, with a gradient descent summary, key points, captured diagram, and video timestamp"/></div>
+    <figcaption>One lesson. Your notes, together.</figcaption>
+  </figure>;
 }

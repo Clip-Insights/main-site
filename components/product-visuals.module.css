@@ -156,26 +156,13 @@
   color: var(--body);
   font-size: 10px;
 }
-.pdfPages {
-  position: relative;
-  aspect-ratio: 1 / 1.14;
-}
-.pdfPages img {
-  position: absolute;
-  height: auto;
-  box-shadow: 0 16px 40px #20233118;
-  border: 1px solid #dfe1e8;
-}
-.firstPage {
-  left: 0;
-  top: 0;
-  width: 60%;
-}
-.secondPage {
-  right: 0;
-  width: 55%;
-  top: 22%;
-}
+.pdfViewer { width: 100%; max-width: 540px; margin-inline: auto; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--inset); }
+.pdfToolbar { display: flex; justify-content: space-between; gap: 16px; padding: 16px 20px; background: var(--surface); border-bottom: 1px solid var(--line); font-size: 10px; color: var(--body); }
+.pdfToolbar>span:last-child { flex-shrink: 0; font-variant-numeric: tabular-nums; }
+.pdfPaper { padding: 24px 40px; }
+.pdfPaper img { display: block; width: 100%; height: auto; border: 1px solid var(--line); box-shadow: 0 12px 24px #2023310a; }
+.pdfViewer figcaption { padding: 0 20px 16px; text-align: center; font-size: 10px; color: var(--body); }
+@media(max-width:600px) { .pdfToolbar { padding: 12px; font-size: 9px; } .pdfPaper { padding: 20px; } }
 @media(min-width:1500px) {
   .studyScene {
     height: 650px;
@@ -261,11 +248,7 @@
   .captureVisual figcaption {
     font-size: 9px;
   }
-  .pdfPages {
-    max-width: 530px;
-    width: 100%;
-    margin-inline: auto;
-  }
+
 }
 @media(min-width:601px) and (max-width:760px) {
   .studyScene {

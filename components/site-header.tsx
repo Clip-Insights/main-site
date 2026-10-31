@@ -12,7 +12,7 @@ export function SiteHeader() {
   return <header className="site-header" onKeyDown={(event) => { if (event.key === "Escape") { setOpen(false); document.getElementById("menu-toggle")?.focus(); } }}>
     <div className="container header-inner">
       <Link href="/" className="wordmark" aria-label="Clip Insights home" onClick={() => setOpen(false)}><BrandMark/></Link>
-      <button id="menu-toggle" className="menu-toggle" aria-expanded={open} aria-controls="main-navigation" onClick={() => setOpen(!open)}>{open ? "Close" : "Menu"}<span aria-hidden="true">{open ? "−" : "+"}</span></button>
+      <button id="menu-toggle" className="menu-toggle" aria-expanded={open} aria-controls="main-navigation" onClick={() => setOpen(!open)}>{open ? "Close" : "Menu"}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" aria-hidden="true">{open ? <path d="m6 6 12 12M6 18 18 6"/> : <path d="M4 8h16M4 16h16"/>}</svg></button>
       <nav id="main-navigation" className={`main-nav ${open ? "is-open" : ""}`} aria-label="Main navigation">
         {links.map(({ href, label }) => <Link key={href} href={href} aria-current={pathname === href ? "page" : undefined} onClick={() => setOpen(false)}>{label}</Link>)}
         <a className="nav-app" href={APP_URL}>Open app <Arrow/></a><a className="button button-small" href={STORE_URL}>Add to Chrome</a>

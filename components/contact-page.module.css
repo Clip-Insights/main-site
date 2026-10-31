@@ -3,43 +3,45 @@
 .heading h1 { font-size:clamp(38px,4vw,54px); }
 .heading>p:last-child { max-width:480px; margin:20px 0 0; color:var(--body); font-size:16px; line-height:1.8; }
 .heading :global(.eyebrow) { margin-bottom:16px; }
-.helpLayout { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); gap:24px; }
-.message { border:1px solid var(--line); border-radius:12px; padding:36px 40px 28px; background:var(--canvas); min-width:0; }
-.mailIcon { display:grid; place-items:center; width:44px; height:44px; border:1px solid var(--line); border-radius:10px; background:var(--white); color:var(--accent); margin-bottom:24px; }
+.helpLayout { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); gap:32px; align-items:stretch; }
+.message { border:1px solid var(--line); border-radius:12px; padding:32px; background:var(--surface); min-width:0; }
+.mailIcon { display:grid; place-items:center; width:44px; height:44px; border:1px solid var(--line); border-radius:10px; background:var(--surface); color:var(--body); margin-bottom:24px; }
 .mailIcon svg { width:22px; height:22px; }
 .message h2 { font-size:28px; letter-spacing:-.035em; }
 .message>p { color:var(--body); font-size:14px; line-height:1.85; margin-top:16px; max-width:350px; }
-.emailButton { margin-top:28px; }
-.resources { display:flex; flex-direction:column; border:1px solid var(--line); border-radius:12px; overflow:hidden; }
-.resource { display:flex; align-items:flex-start; gap:20px; padding:36px 32px; flex:1; transition:background .16s; }
+.emailButton { margin-top:24px; }
+.emailAddress { display:block; margin-top:12px; color:var(--body); font-size:12px; overflow-wrap:anywhere; }
+.resources { display:flex; flex-direction:column; border-block:1px solid var(--line); }
+.resource { display:flex; align-items:flex-start; gap:16px; padding:24px 16px; flex:1; transition:background .16s; }
 .resource+.resource { border-top:1px solid var(--line); }
-.resource:hover { background:var(--canvas); }
+.resource:hover { background:var(--inset); }
 .resource>span:last-child { min-width:0; }
-.resourceIcon { color:var(--muted); flex-shrink:0; padding-top:2px; }
+.resourceIcon { display:grid; place-items:center; color:var(--body); flex-shrink:0; width:40px; height:40px; border:1px solid var(--line); border-radius:10px; background:var(--surface); }
 .resourceIcon svg { width:22px; height:22px; }
 .resource h2 { font-size:21px; line-height:1.35; letter-spacing:-.03em; }
-.resource p { margin-top:12px; color:var(--body); font-size:14px; line-height:1.8; max-width:300px; }
+.resource p { margin-top:8px; color:var(--body); font-size:14px; line-height:1.8; max-width:300px; }
 .resourceAction { display:flex; align-items:center; gap:8px; margin-top:16px; font-size:13px; font-weight:600; color:var(--accent-strong); }
 .resourceAction svg { width:17px; height:17px; }
 .team { margin-top:64px; padding-top:40px; border-top:1px solid var(--line); }
-.teamHeading { text-align:center; margin-bottom:32px; }
-.teamHeading h2 { font-size:24px; letter-spacing:-.035em; }
-.teamHeading p { color:var(--muted); margin-top:12px; font-size:13px; }
-.developers { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:20px; padding:0; margin:0; list-style:none; }
-.developer { display:flex; flex-direction:column; align-items:center; text-align:center; min-width:0; padding-top:8px; }
-.avatar { border-radius:50%; width:40px; height:40px; object-fit:cover; flex-shrink:0; margin-bottom:14px; }
-.initials { display:grid; place-items:center; background:var(--soft); color:var(--accent-strong); font-size:13px; }
-.person { min-width:0; width:100%; }
-.name { font-size:13px; color:var(--ink); font-weight:600; line-height:1.65; min-height:44px; display:flex; align-items:center; justify-content:center; max-width:160px; margin:auto; }
-.role { color:var(--muted); font-size:11px; margin-top:2px; }
-.socials { display:flex; align-items:center; justify-content:center; gap:4px 12px; flex-wrap:wrap; margin-top:8px; }
-.socials a { color:var(--body); text-decoration:underline; text-underline-offset:3px; font-size:11px; min-height:36px; display:inline-flex; align-items:center; }
-.socials a:hover { color:var(--accent); }
+.teamHeading { text-align:left; margin-bottom:28px; }
+.teamHeading h2 { font-size:28px; letter-spacing:-.035em; }
+.teamHeading p { color:var(--muted); margin-top:12px; font-size:14px; max-width:500px; }
+.developers { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:48px; padding:0; margin:0; list-style:none; }
+.developer { display:flex; align-items:flex-start; gap:20px; min-width:0; padding:24px 0; border-top:1px solid var(--line); }
+.avatar { border-radius:50%; width:56px; height:56px; object-fit:cover; flex-shrink:0; }
+.initials { display:grid; place-items:center; background:var(--soft); color:var(--accent-strong); font-size:16px; }
+.person { min-width:0; }
+.name { font-size:15px; color:var(--ink); font-weight:600; line-height:1.5; }
+.role { color:var(--muted); font-size:12px; margin-top:4px; }
+.socials { display:flex; align-items:center; gap:4px; flex-wrap:wrap; margin:10px 0 0 -8px; }
+.socials a { color:var(--body); font-size:12px; font-weight:500; min-height:36px; padding:6px 8px; display:inline-flex; align-items:center; gap:6px; border-radius:6px; transition:background .16s,color .16s; }
+.socials svg { width:14px; height:14px; }
+.socials a:hover { color:var(--ink); background:var(--inset); }
 @media (max-width:850px) {
   .page { padding-block:48px 64px; }
   .message { padding:28px; }
   .resource { padding:28px 24px; gap:16px; }
-  .developers { grid-template-columns:repeat(3,minmax(0,1fr)); row-gap:24px; }
+  .developers { column-gap:24px; }
 }
 @media (max-width:600px) {
   .heading { text-align:left; margin-bottom:32px; }
@@ -53,7 +55,8 @@
   .team { margin-top:40px; padding-top:32px; }
   .teamHeading { text-align:left; }
   .teamHeading h2 { font-size:23px; }
-  .developers { grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px 16px; }
-  .socials { gap:0 12px; }
+  .developers { grid-template-columns:1fr; }
+  .developer { padding:20px 0; gap:16px; }
+  .socials { gap:0 4px; }
   .socials a { min-height:44px; font-size:12px; }
 }

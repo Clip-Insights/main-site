@@ -225,43 +225,6 @@
   align-items: center;
   padding-block: 0 88px;
 }
-.libraryVisual {
-  border: 1px solid #dedfe5;
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
-}
-.libraryHeading {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  padding: 20px 24px;
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 1px;
-}
-.libraryHeading>span:last-child {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  letter-spacing: 0;
-  color: var(--body);
-}
-.libraryHeading svg {
-  width: 12px;
-  height: 12px;
-}
-.libraryVisual>img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-.libraryVisual figcaption {
-  padding: 16px 24px;
-  font-size: 9px;
-  color: var(--body);
-}
 .librarySteps {
   list-style: none;
   counter-reset: steps;
@@ -414,12 +377,6 @@
   .librarySection {
     gap: 40px;
   }
-  .libraryHeading {
-    padding: 16px;
-  }
-  .libraryHeading>span:last-child {
-    display: none;
-  }
 }
 @media(max-width:760px) {
   .wrap {
@@ -552,12 +509,6 @@
   }
   .sectionCopy h2 {
     font-size: 40px;
-  }
-  .libraryHeading>span:last-child {
-    display: flex;
-  }
-  .libraryHeading {
-    font-size: 8px;
   }
   .faqList summary {
     font-size: 13px;

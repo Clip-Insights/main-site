@@ -26,7 +26,7 @@ export function ContactPage({ title, description }: { title: string; description
       </div>
     </section>
     <section className={styles.team} aria-labelledby="contact-team-heading">
-      <header className={styles.teamHeading}><h2 id="contact-team-heading">The people behind Clip Insights</h2><p>Built together. Connect with the developers.</p></header>
+      <header className={styles.teamHeading}><h2 id="contact-team-heading">The team behind Clip Insights</h2><p>Five developers, one shared project. Meet the people who build Clip Insights.</p></header>
       <DeveloperContacts/>
     </section>
   </div>;
